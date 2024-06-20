@@ -1,6 +1,18 @@
 import React from "react";
+// import {
+//   Drawer,
+//   DrawerBody,
+//   DrawerFooter,
+//   DrawerHeader,
+//   DrawerOverlay,
+//   DrawerContent,
+//   DrawerCloseButton,
+// } from '@chakra-ui/react'
 
 const Navbar = () => {
+  // const { isOpen, onOpen, onClose } = useDisclosure()
+  // const btnRef = React.useRef()
+
   return (
     <>
       <nav className="flex justify-between w-auto h-14 bg-black text-white items-center">
@@ -9,18 +21,11 @@ const Navbar = () => {
         </div>
         <div className="">
           <ul className="flex flex-row gap-10 pr-20 items-center">
-            <li className=" cursor-pointer">Home</li>
-            <li className=" cursor-pointer">About</li>
-            <li className=" cursor-pointer">Experience</li>
-            <li className=" cursor-pointer">Projects</li>
-            <li className=" cursor-pointer">Contact</li>
-            <li className=" cursor-pointer">
-              <img
-                className="h-12 w-9 rounded-full"
-                src="./Images/Myimg_2.JPG"
-                alt="Myimg_1.JPG"
-              />
-            </li>
+            <li className="cursor-pointer">Home</li>
+            <li className="cursor-pointer">About</li>
+            <li className="cursor-pointer">Experience</li>
+            <li className="cursor-pointer">Projects</li>
+            <li className="cursor-pointer">Contact</li>
           </ul>
         </div>
       </nav>
