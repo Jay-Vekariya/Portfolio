@@ -8,7 +8,7 @@ const Navbar = () => {
           <h1 className="font-serif text-3xl font-medium">Jay M. Vekariya</h1>
         </div>
         <div className="">
-          <ul className="flex flex-row gap-10 pr-28 items-center">
+          <ul className="flex flex-row gap-10 pr-20 items-center">
             <li className=" cursor-pointer">Home</li>
             <li className=" cursor-pointer">About</li>
             <li className=" cursor-pointer">Experience</li>
