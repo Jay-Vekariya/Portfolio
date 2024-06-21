@@ -24,8 +24,8 @@ const Homepage = () => {
   }, []);
 
   return (
-    <div className="text-white flex flex-row justify-evenly w-auto">
-      <div className="text-center min-w-[651px] max-w-[700px] place-content-center">
+    <div id="Home" className="text-white flex flex-row justify-evenly w-auto">
+      <div className="text-center w-full md:max-w-[700px] place-content-center">
         <h1 className="text-5xl font-serif font-bold min-h-[20%]">
           {name.substring(0, index)}
         </h1>
