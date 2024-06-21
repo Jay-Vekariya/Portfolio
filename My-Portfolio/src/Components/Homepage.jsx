@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Divider, useMediaQuery } from "@chakra-ui/react";
 
 const Homepage = () => {
   const [name, setName] = useState("");
@@ -23,18 +24,25 @@ const Homepage = () => {
     setName(fullName);
   }, []);
 
+  const [isLargerThanMobile] = useMediaQuery("(min-width: 30em)");
+  const [isLargerThanTablet] = useMediaQuery("(min-width: 48em)");
+  const [isLargerThanDesktop] = useMediaQuery("(min-width: 62em)");
+
   return (
     <div id="Home" className="text-white flex flex-row justify-evenly w-auto">
-      <div className="text-center w-full md:max-w-[700px] place-content-center">
-        <h1 className="text-5xl font-serif font-bold min-h-[20%]">
+      <div className="p-4 text-center w-full md:max-w-[700px] place-content-center">
+        <h1 className="text-4xl font-serif font-bold min-h-[20%]">
           {name.substring(0, index)}
         </h1>
-        <h2 className="text-2xl font-serif font-medium">
+        <h2 className="text-xl font-serif font-medium">
           I'm a MERN Stack Developer
         </h2>
-        <h3 className="text-wrap">
-          Full-Stack Web Developer | Expertise in MERN Stack: React.js, Redux
-          Toolkit, Node.js, Express.js, MongoDB | Proficient in Tailwind CSS
+        <Divider />
+        <p>About me</p>
+        <h3 className="text-wrap ">
+          I am currently pursuing B.Tech Computer Engineering. A full-stack
+          Developer with expertise in MERN stack and Tailwind CSS, seeking to
+          contribute to impactful software projects with top-notch solutions
         </h3>
       </div>
       <div className="">

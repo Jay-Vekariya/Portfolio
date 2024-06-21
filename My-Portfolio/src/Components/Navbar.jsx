@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { IoHome } from "react-icons/io5";
+import { FcBusinessman } from "react-icons/fc";
 import {
   Drawer,
   DrawerBody,
@@ -18,6 +19,7 @@ import {
   HStack,
   VStack,
 } from "@chakra-ui/react";
+import { IoArrowForward } from "react-icons/io5";
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -26,8 +28,10 @@ const Navbar = () => {
   return (
     <div>
       <nav className="flex justify-around w-auto h-14 bg-black text-white items-center">
-        <div className="pl-20">
-          <h1 className="font-serif text-3xl font-medium">Jay M. Vekariya</h1>
+        <div>
+          <h1 className="flex items-center gap-3 font-serif text-3xl text-center font-medium">
+            <FcBusinessman className="text-[35px]" /> Jay M. Vekariya
+          </h1>
         </div>
         <ul>
           <li className="md:hidden hidden sm:hidden lg:flex lg:flex-row gap-10 items-center pr-20">
@@ -36,7 +40,7 @@ const Navbar = () => {
               <a href="#Home">Home</a>
             </li>
             <li className="cursor-pointer">
-              <a href="#About">About</a>
+              <a href="#About">Academic Credentials</a>
             </li>
             <li className="cursor-pointer">
               {" "}
@@ -46,8 +50,13 @@ const Navbar = () => {
               <a href="#Projects">Projects</a>
             </li>
             <li className="cursor-pointer">
-              {" "}
-              <a href="#Contact">Contact</a>
+              <Button
+                rightIcon={<IoArrowForward />}
+                colorScheme="white"
+                variant="outline"
+              >
+                <a href="#Contact">Contact</a>
+              </Button>
             </li>
           </li>
           <li className="list-none">
@@ -65,7 +74,7 @@ const Navbar = () => {
       <>
         <Drawer
           isOpen={isOpen}
-          placement="left"
+          placement="top"
           onClose={onClose}
           finalFocusRef={btnRef}
         >
@@ -85,7 +94,7 @@ const Navbar = () => {
                       <a href="#Home">Home</a>
                     </Text>
                     <Text>
-                      <a href="#About">About</a>
+                      <a href="#About">Academic Credentials</a>
                     </Text>
                     <Text>
                       <a href="#Experience">Experience</a>
