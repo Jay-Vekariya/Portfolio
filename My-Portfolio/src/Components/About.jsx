@@ -1,5 +1,12 @@
 import React from "react";
-import { Center, Box, Heading, Text, Flex, useBreakpointValue } from "@chakra-ui/react";
+import {
+  Center,
+  Box,
+  Heading,
+  Text,
+  Flex,
+  useBreakpointValue,
+} from "@chakra-ui/react";
 import { Card, CardHeader, CardBody, CardFooter } from "@chakra-ui/react";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 
@@ -10,7 +17,12 @@ const steps = [
 ];
 
 const About = () => {
-  const fontSize = useBreakpointValue({ base: "20px", sm: "24px", md: "28px", lg: "30px" });
+  const fontSize = useBreakpointValue({
+    base: "15px",
+    sm: "20px",
+    md: "22px",
+    lg: "25px",
+  });
 
   return (
     <div className="w-auto">
@@ -37,7 +49,7 @@ const About = () => {
                 align="center"
                 bg="black"
                 color="white"
-                border="1px solid white"
+                // border="1px solid white"
                 w="auto"
               >
                 <CardBody>
@@ -55,7 +67,7 @@ const About = () => {
                 align="center"
                 bg="black"
                 color="white"
-                border="1px solid white"
+                // border="1px solid white"
                 w="auto"
               >
                 <CardBody>
@@ -72,7 +84,7 @@ const About = () => {
                 align="center"
                 bg="black"
                 color="white"
-                border="1px solid white"
+                // border="1px solid white"
                 w="auto"
               >
                 <CardBody>

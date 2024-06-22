@@ -91,7 +91,9 @@ const Navbar = () => {
                   <VStack fontWeight="600">
                     <Text>
                       {" "}
-                      <a href="#Home">Home</a>
+                      <a onClose={onClose} finalFocusRef={btnRef} href="#Home">
+                        Home
+                      </a>
                     </Text>
                     <Text>
                       <a href="#About">Academic Credentials</a>
