@@ -24,35 +24,34 @@ const Homepage = () => {
     setName(fullName);
   }, []);
 
-  const [isLargerThanMobile] = useMediaQuery("(min-width: 30em)");
-  const [isLargerThanTablet] = useMediaQuery("(min-width: 48em)");
-  const [isLargerThanDesktop] = useMediaQuery("(min-width: 62em)");
-
   return (
-    <div id="Home" className="text-white flex flex-row justify-evenly w-auto">
-      <div className="p-4 text-center w-full md:max-w-[700px] min-h-[300px] flex flex-col items-center xl:min-h-[200px]  xl:items-center sm:p-8 place-content-center">
-        <h1 className="font-serif font-bold  xl:min-h-[80px] xl:text-[40px] lg:min-h-[60px] lg:text-[32px] md:min-h-[50px] md:text-[28px] sm:min-h-[50px] sm:text-[25px] text-[20px] min-h-[60px]">
+    <div
+      id="Home"
+      className="pl-4 pr-6 text-white xl:flex xl:flex-row lg:flex lg:flex-row md:flex md:flex-row sm:flex sm:flex-col flex flex-col justify-between lg:justify-around xl:justify-around w-auto"
+    >
+      <div className="2xl:flex 2xl:flex-col 2xl:place-content-center xl:flex xl:flex-col xl:place-content-center lg:flex lg:flex-col lg:place-content-center md:flex md:flex-col md:place-content-center sm:flex sm:flex-row sm:place-content-center flex flex-row place-content-center">
+        <img
+          className="xl:object-contain xl:h-72 xl:w-72 lg:h-60 lg:w-60 md:h-52 md:w-52 sm:h-40 sm:w-40 h-40 w-40 rounded-full"
+          src="./Images/Myimg_3.JPG"
+          alt="Profile_Img"
+        />
+      </div>
+      <div className="lg:pr-12 text-center w-full xl:max-w-[720px] md:max-w-[500px] lg:max-w-[550px] min-h-[300px] flex flex-col items-center xl:min-h-[200px]  xl:items-center sm:p-8 place-content-center">
+        <h1 className="font-serif font-bold  xl:min-h-[80px] xl:text-[34px] lg:min-h-[60px] lg:text-[30px] md:min-h-[50px] md:text-[25px] sm:min-h-[50px] sm:text-[25px] text-[20px] min-h-[50px]">
           {name.substring(0, index)}
         </h1>
-        <h2 className="font-serif font-medium text-[10px] xl:text-[22px] lg:text-[18px] md:text-[17px] sm:text-[16px]">
-          I'm a MERN Stack Developer
-        </h2>
         <Divider />
         <Center>
           <p className="m-3 border box-border w-20 p-1">About me</p>
         </Center>
-        <h3 className="text-wrap text-[11px] xl:text-[20px] lg:text-[22px] md:text-[17px] sm:text-[16px]">
+        <h2 className="font-serif font-medium text-[15px] xl:text-[22px] lg:text-[18px] md:text-[18px] sm:text-[16px]">
+          I'm a MERN Stack Developer
+        </h2>
+        <h3 className="text-wrap text-[15px] xl:text-[22px] lg:text-[18px] md:text-[16px] sm:text-[16px]">
           I am currently pursuing B.Tech Computer Engineering. A full-stack
           Developer with expertise in MERN stack and Tailwind CSS, seeking to
           contribute to impactful software projects with top-notch solutions
         </h3>
-      </div>
-      <div className="flex felx-col items-center md:flex md:flex-col md:items-center">
-        <img
-          className="h-78 w-72 rounded-full"
-          src="./Images/Myimg_1.JPG"
-          alt="Profile_Img"
-        />
       </div>
     </div>
   );
