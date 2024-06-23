@@ -1,20 +1,22 @@
 import React from "react";
 import Navbar from "./Components/Navbar";
 import Homepage from "./Components/Homepage";
-import About from "./Components/About";
+import Academics from "./Components/Academics";
 import Experience from "./Components/Experience";
 import Projects from "./Components/Projects";
 import Contact from "./Components/Contact";
+import Footer from "./Components/Footer";
 
 const App = () => {
   return (
-    <div className="bg-black text-white w-auto flex flex-col gap-10 ">
+    <div className="h-auto   bg-black text-white w-auto flex flex-col gap-10 pt-10">
       <Navbar />
       <Homepage />
-      <About />
+      <Academics />
       <Experience />
       <Projects />
       <Contact />
+      <Footer />
     </div>
   );
 };
