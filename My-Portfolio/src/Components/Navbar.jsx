@@ -7,7 +7,6 @@ import {
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
-  useDisclosure,
   Button,
   Text,
   Heading,
@@ -17,6 +16,8 @@ import {
   FormControl,
   FormLabel,
   Input,
+  Center,
+  Textarea,
 } from "@chakra-ui/react";
 import {
   Modal,
@@ -27,7 +28,7 @@ import {
   ModalBody,
   ModalCloseButton,
 } from "@chakra-ui/react";
-import { IoArrowForward } from "react-icons/io5";
+import { FcAssistant } from "react-icons/fc";
 
 const Navbar = () => {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
@@ -75,9 +76,10 @@ const Navbar = () => {
             </li>
             <li className="cursor-pointer">
               <Button
-                rightIcon={<IoArrowForward />}
+                rightIcon={<FcAssistant />}
                 colorScheme="white"
-                variant="outline"
+                variant=""
+                bgColor="orange.600"
                 onClick={handleOpenModal}
               >
                 Contact
@@ -90,17 +92,25 @@ const Navbar = () => {
               >
                 <ModalOverlay />
                 <ModalContent>
-                  <ModalHeader>Create your account</ModalHeader>
+                  <ModalHeader>
+                    <Center>
+                      <Heading>Get In Touch</Heading>
+                    </Center>
+                  </ModalHeader>
                   <ModalCloseButton />
                   <ModalBody pb={6}>
                     <FormControl>
-                      <FormLabel>First name</FormLabel>
-                      <Input ref={initialRef} placeholder="First name" />
+                      <FormLabel>Your Name</FormLabel>
+                      <Input ref={initialRef} placeholder="Enter Your Name" />
                     </FormControl>
 
                     <FormControl mt={4}>
-                      <FormLabel>Last name</FormLabel>
-                      <Input placeholder="Last name" />
+                      <FormLabel>Your Email</FormLabel>
+                      <Input placeholder="Enter Your Email" />
+                    </FormControl>
+
+                    <FormControl mt={4}>
+                      <Textarea placeholder="Your Message" />
                     </FormControl>
                   </ModalBody>
 
@@ -154,10 +164,14 @@ const Navbar = () => {
                     </a>
                   </Text>
                   <Text>
-                    <a href="#Academics">Academic Credentials</a>
+                    <a href="#Academics" onClick={handleCloseDrawer}>
+                      Academic Credentials
+                    </a>
                   </Text>
                   <Text>
-                    <a href="#Experience">Experience</a>
+                    <a href="#Experience" onClick={handleCloseDrawer}>
+                      Experience
+                    </a>
                   </Text>
                   <Text>
                     <a href="#Projects">Projects</a>
