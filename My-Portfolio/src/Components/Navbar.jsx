@@ -73,7 +73,7 @@ const Navbar = () => {
               <a href="#Experience">Experience</a>
             </li>
             <li className="cursor-pointer">
-              <a href="#Projects">Projects</a>
+              <a href="#projects">Projects</a>
             </li>
             <li className="cursor-pointer">
               <Button
@@ -174,7 +174,9 @@ const Navbar = () => {
                     </a>
                   </Text>
                   <Text>
-                    <a href="#Projects">Projects</a>
+                    <a href="#projects" onClick={handleCloseDrawer}>
+                      Projects
+                    </a>
                   </Text>
                   <Text>
                     <a
