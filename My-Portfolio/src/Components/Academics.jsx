@@ -20,9 +20,9 @@ const Academics = () => {
   });
 
   return (
-    <div className="w-auto p-4"> 
+    <div className="w-auto p-4" id="Academics" > 
       <Center className="flex flex-col gap-6">
-        <div id="About" className="text-wrap">
+        <div className="text-wrap" >
           <Heading>Academic Credentials</Heading>
         </div>
 

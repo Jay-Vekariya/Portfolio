@@ -40,7 +40,7 @@ const Navbar = () => {
               <a href="#Home">Home</a>
             </li>
             <li className="cursor-pointer">
-              <a href="#About">Academic Credentials</a>
+              <a href="#Academics">Academic Credentials</a>
             </li>
             <li className="cursor-pointer">
               {" "}
@@ -96,7 +96,7 @@ const Navbar = () => {
                       </a>
                     </Text>
                     <Text>
-                      <a href="#About">Academic Credentials</a>
+                      <a href="#Academics">Academic Credentials</a>
                     </Text>
                     <Text>
                       <a href="#Experience">Experience</a>
