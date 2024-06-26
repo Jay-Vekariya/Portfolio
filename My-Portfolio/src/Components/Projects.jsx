@@ -1,9 +1,14 @@
-import React from 'react'
+import { Center, Heading } from "@chakra-ui/react";
+import React from "react";
 
 const Projects = () => {
   return (
-    <div>Projects</div>
-  )
-}
+    <div>
+      <Center>
+        <Heading>Projects</Heading>
+      </Center>
+    </div>
+  );
+};
 
-export default Projects
+export default Projects;

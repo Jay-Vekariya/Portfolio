@@ -8,15 +8,8 @@ import {
   useBreakpointValue,
   Image,
 } from "@chakra-ui/react";
-import { Card, CardHeader, CardBody, CardFooter } from "@chakra-ui/react";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import { CustomeCard } from "./Chakra/CustomeCard";
-
-const steps = [
-  { title: "College", description: "Contact Info" },
-  { title: "Higher Education", description: "Date & Time" },
-  { title: "Secondary Education", description: "Select Rooms" },
-];
 
 const Academics = () => {
   const fontSize = useBreakpointValue({
