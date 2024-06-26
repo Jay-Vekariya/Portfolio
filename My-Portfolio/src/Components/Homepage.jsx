@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Center, Divider, useMediaQuery } from "@chakra-ui/react";
+import { Center, Divider, Button } from "@chakra-ui/react";
 
 const Homepage = () => {
   const [name, setName] = useState("");
@@ -42,7 +42,9 @@ const Homepage = () => {
         </h1>
         <Divider />
         <Center>
-          <p className="m-3 border box-border w-20 p-1">About me</p>
+          <Button variant="solid" colorScheme="blue" m={4}>
+            About me
+          </Button>
         </Center>
         <h2 className="font-serif font-medium text-[15px] xl:text-[22px] lg:text-[18px] md:text-[18px] sm:text-[16px]">
           I'm a MERN Stack Developer
