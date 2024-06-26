@@ -4,26 +4,50 @@ import { FcBusinessman } from "react-icons/fc";
 import {
   Drawer,
   DrawerBody,
-  DrawerFooter,
-  DrawerHeader,
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
   useDisclosure,
   Button,
-  Input,
   Text,
   Heading,
   Stack,
   Box,
-  HStack,
   VStack,
+  FormControl,
+  FormLabel,
+  Input,
+} from "@chakra-ui/react";
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
 } from "@chakra-ui/react";
 import { IoArrowForward } from "react-icons/io5";
 
 const Navbar = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [isDrawerOpen, setDrawerOpen] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(false);
   const btnRef = React.useRef();
+  const initialRef = React.useRef(null);
+  const finalRef = React.useRef(null);
+
+  const handleOpenModal = () => {
+    setModalOpen(true);
+  };
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
+  const handleOpenDrawer = () => {
+    setDrawerOpen(true);
+  };
+  const handleCloseDrawer = () => {
+    setDrawerOpen(false);
+  };
 
   return (
     <div>
@@ -54,16 +78,47 @@ const Navbar = () => {
                 rightIcon={<IoArrowForward />}
                 colorScheme="white"
                 variant="outline"
+                onClick={handleOpenModal}
               >
-                <a href="#Contact">Contact</a>
+                Contact
               </Button>
+              <Modal
+                initialFocusRef={initialRef}
+                finalFocusRef={finalRef}
+                isOpen={isModalOpen}
+                onClose={handleCloseModal}
+              >
+                <ModalOverlay />
+                <ModalContent>
+                  <ModalHeader>Create your account</ModalHeader>
+                  <ModalCloseButton />
+                  <ModalBody pb={6}>
+                    <FormControl>
+                      <FormLabel>First name</FormLabel>
+                      <Input ref={initialRef} placeholder="First name" />
+                    </FormControl>
+
+                    <FormControl mt={4}>
+                      <FormLabel>Last name</FormLabel>
+                      <Input placeholder="Last name" />
+                    </FormControl>
+                  </ModalBody>
+
+                  <ModalFooter>
+                    <Button colorScheme="blue" mr={3}>
+                      Save
+                    </Button>
+                    <Button onClick={handleCloseModal}>Cancel</Button>
+                  </ModalFooter>
+                </ModalContent>
+              </Modal>
             </li>
           </li>
           <li className="list-none">
             <button
               ref={btnRef}
               colorScheme="teal"
-              onClick={onOpen}
+              onClick={handleOpenDrawer}
               className="text-3xl lg:hidden cursor-pointer"
             >
               &#9776;
@@ -71,56 +126,59 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
-      <>
-        <Drawer
-          isOpen={isOpen}
-          placement="left"
-          onClose={onClose}
-          finalFocusRef={btnRef}
-        >
-          <DrawerOverlay />
-          <DrawerContent>
-            <DrawerCloseButton />
-            <Heading fontSize="20px" as="h1" textAlign="center" pt="3.5rem">
-              Jay M. Vekariya
-            </Heading>
+      <Drawer
+        isOpen={isDrawerOpen}
+        placement="left"
+        onClose={handleCloseDrawer}
+        finalFocusRef={btnRef}
+      >
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerCloseButton />
+          <Heading fontSize="20px" as="h1" textAlign="center" pt="3.5rem">
+            Jay M. Vekariya
+          </Heading>
 
-            <DrawerBody>
-              <Stack textAlign="center">
-                <Box mt="6" mx="3" textAlign="center">
-                  <VStack fontWeight="600">
-                    <Text>
-                      {" "}
-                      <a onClose={onClose} finalFocusRef={btnRef} href="#Home">
-                        Home
-                      </a>
-                    </Text>
-                    <Text>
-                      <a href="#Academics">Academic Credentials</a>
-                    </Text>
-                    <Text>
-                      <a href="#Experience">Experience</a>
-                    </Text>
-                    <Text>
-                      <a href="#Projects">Projects</a>
-                    </Text>
-                    <Text>
-                      <a href="#Contact">Contact</a>
-                    </Text>
-                  </VStack>
-                </Box>
-              </Stack>
-            </DrawerBody>
-
-            {/* <DrawerFooter>
-              <Button variant="outline" mr={3} onClick={onClose}>
-                Cancel
-              </Button>
-              <Button colorScheme="blue">Save</Button>
-            </DrawerFooter> */}
-          </DrawerContent>
-        </Drawer>
-      </>
+          <DrawerBody>
+            <Stack textAlign="center">
+              <Box mt="6" mx="3" textAlign="center">
+                <VStack fontWeight="600">
+                  <Text>
+                    {" "}
+                    <a
+                      onClose={handleCloseDrawer}
+                      finalFocusRef={btnRef}
+                      href="#Home"
+                    >
+                      Home
+                    </a>
+                  </Text>
+                  <Text>
+                    <a href="#Academics">Academic Credentials</a>
+                  </Text>
+                  <Text>
+                    <a href="#Experience">Experience</a>
+                  </Text>
+                  <Text>
+                    <a href="#Projects">Projects</a>
+                  </Text>
+                  <Text>
+                    <a
+                      href="#Contact"
+                      onClick={() => {
+                        handleOpenModal();
+                        handleCloseDrawer();
+                      }}
+                    >
+                      Contact
+                    </a>
+                  </Text>
+                </VStack>
+              </Box>
+            </Stack>
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
     </div>
   );
 };
