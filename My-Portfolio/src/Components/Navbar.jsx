@@ -18,6 +18,7 @@ import {
   Input,
   Center,
   Textarea,
+  Flex,
 } from "@chakra-ui/react";
 import {
   Modal,
@@ -114,11 +115,10 @@ const Navbar = () => {
                     </FormControl>
                   </ModalBody>
 
-                  <ModalFooter>
+                  <ModalFooter placeContent="center">
                     <Button colorScheme="blue" mr={3}>
-                      Save
+                      Submit
                     </Button>
-                    <Button onClick={handleCloseModal}>Cancel</Button>
                   </ModalFooter>
                 </ModalContent>
               </Modal>
