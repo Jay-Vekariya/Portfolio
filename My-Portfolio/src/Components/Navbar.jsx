@@ -165,7 +165,7 @@ const Navbar = () => {
                             ).every((value) => value === "");
 
                             if (!isFormEmpty) {
-                              // Create an example promise that resolves in 5s
+                              // Create an example promise that resolves in 2s
                               const examplePromise = new Promise(
                                 (resolve, reject) => {
                                   setTimeout(() => resolve(200), 2000);
@@ -174,7 +174,7 @@ const Navbar = () => {
 
                               toast.promise(examplePromise, {
                                 success: {
-                                  title: "Data Send Successfully..!",
+                                  title: "Email send successfully..!",
                                   description: "Looks great",
                                 },
                                 error: {
@@ -182,7 +182,7 @@ const Navbar = () => {
                                   description: "Something wrong",
                                 },
                                 loading: {
-                                  title: "data sending...",
+                                  title: "Data sending...",
                                   description: "Please wait",
                                 },
                               });
