@@ -18,7 +18,6 @@ import {
   Input,
   Center,
   Textarea,
-  Flex,
 } from "@chakra-ui/react";
 import {
   Modal,

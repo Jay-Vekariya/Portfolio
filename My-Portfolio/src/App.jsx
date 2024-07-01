@@ -5,6 +5,7 @@ import Academics from "./Components/Academics";
 import Experience from "./Components/Experience";
 import Projects from "./Components/Projects";
 import Footer from "./Components/Footer";
+import Technical_skills from "./Components/Technical_skills";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <Navbar />
       <Homepage />
       <Academics />
+      <Technical_skills />
       <Experience />
       <Projects />
       <Footer />
