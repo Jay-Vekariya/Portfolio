@@ -18,6 +18,7 @@ import {
   Input,
   Center,
   Textarea,
+  useToast,
 } from "@chakra-ui/react";
 import {
   Modal,
@@ -37,6 +38,7 @@ const Navbar = () => {
   const btnRef = React.useRef();
   const initialRef = React.useRef(null);
   const finalRef = React.useRef(null);
+  const toast = useToast();
 
   const handleOpenModal = () => {
     setModalOpen(true);
@@ -152,7 +154,41 @@ const Navbar = () => {
                         />
                       </FormControl>
                       <ModalFooter placeContent="center">
-                        <Button type="submit" colorScheme="blue" mr={3}>
+                        <Button
+                          type="submit"
+                          colorScheme="blue"
+                          mr={3}
+                          onClick={(e) => {
+                            const formData = new FormData(form.current);
+                            const isFormEmpty = Array.from(
+                              formData.values()
+                            ).every((value) => value === "");
+
+                            if (!isFormEmpty) {
+                              // Create an example promise that resolves in 5s
+                              const examplePromise = new Promise(
+                                (resolve, reject) => {
+                                  setTimeout(() => resolve(200), 2000);
+                                }
+                              );
+
+                              toast.promise(examplePromise, {
+                                success: {
+                                  title: "Data Send Successfully..!",
+                                  description: "Looks great",
+                                },
+                                error: {
+                                  title: "Promise rejected",
+                                  description: "Something wrong",
+                                },
+                                loading: {
+                                  title: "data sending...",
+                                  description: "Please wait",
+                                },
+                              });
+                            }
+                          }}
+                        >
                           Submit
                         </Button>
                       </ModalFooter>
