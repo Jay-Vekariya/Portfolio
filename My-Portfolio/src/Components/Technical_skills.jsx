@@ -4,7 +4,7 @@ import { CustomeCard } from "./Chakra/CustomeCard";
 
 const Technical_skills = () => {
   return (
-    <div>
+    <div id="Technical-Skills">
       <Flex flexDirection="column" gap="8">
         <Center>
           <Heading>Technical Skills</Heading>

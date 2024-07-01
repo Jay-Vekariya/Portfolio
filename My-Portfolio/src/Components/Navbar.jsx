@@ -68,6 +68,9 @@ const Navbar = () => {
               <a href="#Academics">Academic Credentials</a>
             </li>
             <li className="cursor-pointer">
+              <a href="#Technical-Skills">Technical Skills</a>
+            </li>
+            <li className="cursor-pointer">
               {" "}
               <a href="#Experience">Experience</a>
             </li>
@@ -165,6 +168,11 @@ const Navbar = () => {
                   <Text>
                     <a href="#Academics" onClick={handleCloseDrawer}>
                       Academic Credentials
+                    </a>
+                  </Text>
+                  <Text>
+                    <a href="#Technical-Skills" onClick={handleCloseDrawer}>
+                      Technical Skills
                     </a>
                   </Text>
                   <Text>
