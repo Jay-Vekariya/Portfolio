@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { IoHome } from "react-icons/io5";
 import { FcBusinessman } from "react-icons/fc";
 import {
@@ -29,6 +29,7 @@ import {
   ModalCloseButton,
 } from "@chakra-ui/react";
 import { FcAssistant } from "react-icons/fc";
+import emailjs from "@emailjs/browser";
 
 const Navbar = () => {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
@@ -48,6 +49,27 @@ const Navbar = () => {
   };
   const handleCloseDrawer = () => {
     setDrawerOpen(false);
+  };
+
+  //Contect form data in direct send to Email..
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm("service_iv1scia", "template_lx6us2d", form.current, {
+        publicKey: "8asV3e73wcQHYDorc",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+          handleCloseModal();
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
   };
 
   return (
@@ -102,26 +124,40 @@ const Navbar = () => {
                   </ModalHeader>
                   <ModalCloseButton />
                   <ModalBody pb={6}>
-                    <FormControl>
-                      <FormLabel>Your Name</FormLabel>
-                      <Input ref={initialRef} placeholder="Enter Your Name" />
-                    </FormControl>
+                    <form ref={form} onSubmit={sendEmail}>
+                      <FormControl>
+                        <FormLabel>Your Name</FormLabel>
+                        <Input
+                          // ref={initialRef}
+                          placeholder="Enter Your Name"
+                          name="from_name"
+                          required
+                        />
+                      </FormControl>
 
-                    <FormControl mt={4}>
-                      <FormLabel>Your Email</FormLabel>
-                      <Input placeholder="Enter Your Email" />
-                    </FormControl>
+                      <FormControl mt={4}>
+                        <FormLabel>Your Email</FormLabel>
+                        <Input
+                          placeholder="Enter Your Email"
+                          name="from_email"
+                          required
+                        />
+                      </FormControl>
 
-                    <FormControl mt={4}>
-                      <Textarea placeholder="Your Message" />
-                    </FormControl>
+                      <FormControl mt={4}>
+                        <Textarea
+                          placeholder="Your Message"
+                          name="message"
+                          required
+                        />
+                      </FormControl>
+                      <ModalFooter placeContent="center">
+                        <Button type="submit" colorScheme="blue" mr={3}>
+                          Submit
+                        </Button>
+                      </ModalFooter>
+                    </form>
                   </ModalBody>
-
-                  <ModalFooter placeContent="center">
-                    <Button colorScheme="blue" mr={3}>
-                      Submit
-                    </Button>
-                  </ModalFooter>
                 </ModalContent>
               </Modal>
             </li>
