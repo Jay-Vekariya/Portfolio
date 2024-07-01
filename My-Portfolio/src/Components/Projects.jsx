@@ -49,6 +49,30 @@ const Projects = () => {
           <Card maxW="sm" mt="8">
             <CardBody>
               <Image
+                src="./Images/Project_3.jpg"
+                alt="Green double couch with wooden legs"
+                borderRadius="lg"
+              />
+              <Heading size="md" paddingTop={3}>
+                <Center>Online Course Registration</Center>
+              </Heading>
+            </CardBody>
+            <Divider />
+            <CardFooter placeContent="center">
+              <Button variant="solid" colorScheme="blue">
+                <a
+                  href="https://online-course-registration.onrender.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View site
+                </a>
+              </Button>
+            </CardFooter>
+          </Card>
+          <Card maxW="sm" mt="8">
+            <CardBody>
+              <Image
                 src="./Images/Project_2.jpg"
                 alt="Green double couch with wooden legs"
                 borderRadius="lg"
@@ -73,23 +97,23 @@ const Projects = () => {
           <Card maxW="sm" mt="8">
             <CardBody>
               <Image
-                src="./Images/Project_3.jpg"
+                src="./Images/Project_4.jpg"
                 alt="Green double couch with wooden legs"
                 borderRadius="lg"
               />
               <Heading size="md" paddingTop={3}>
-                <Center>Online Course Registration</Center>
+                <Center>Dice Game</Center>
               </Heading>
             </CardBody>
             <Divider />
             <CardFooter placeContent="center">
               <Button variant="solid" colorScheme="blue">
                 <a
-                  href="https://online-course-registration.onrender.com/"
+                  href="https://testrepo2-zysh.onrender.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  View site
+                  Play it
                 </a>
               </Button>
             </CardFooter>

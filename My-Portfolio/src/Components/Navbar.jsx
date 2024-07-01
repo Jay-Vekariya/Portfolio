@@ -226,34 +226,75 @@ const Navbar = () => {
           <DrawerBody>
             <Stack textAlign="center">
               <Box mt="6" mx="3" textAlign="center">
-                <VStack fontWeight="600">
+                <VStack fontWeight="600" fontSize="xl">
                   <Text>
-                    {" "}
                     <a
                       onClose={handleCloseDrawer}
                       finalFocusRef={btnRef}
                       href="#Home"
+                      onMouseEnter={(e) => {
+                        e.target.style.color = "red";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.target.style.color = "black";
+                      }}
                     >
                       Home
                     </a>
                   </Text>
                   <Text>
-                    <a href="#Academics" onClick={handleCloseDrawer}>
+                    <a
+                      href="#Academics"
+                      onClick={handleCloseDrawer}
+                      onMouseEnter={(e) => {
+                        e.target.style.color = "red";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.target.style.color = "black";
+                      }}
+                    >
                       Academic Credentials
                     </a>
                   </Text>
                   <Text>
-                    <a href="#Technical-Skills" onClick={handleCloseDrawer}>
+                    <a
+                      href="#Technical-Skills"
+                      onClick={handleCloseDrawer}
+                      onMouseEnter={(e) => {
+                        e.target.style.color = "red";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.target.style.color = "black";
+                      }}
+                    >
                       Technical Skills
                     </a>
                   </Text>
                   <Text>
-                    <a href="#Experience" onClick={handleCloseDrawer}>
+                    <a
+                      href="#Experience"
+                      onClick={handleCloseDrawer}
+                      onMouseEnter={(e) => {
+                        e.target.style.color = "red";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.target.style.color = "black";
+                      }}
+                    >
                       Experience
                     </a>
                   </Text>
                   <Text>
-                    <a href="#projects" onClick={handleCloseDrawer}>
+                    <a
+                      href="#projects"
+                      onClick={handleCloseDrawer}
+                      onMouseEnter={(e) => {
+                        e.target.style.color = "red";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.target.style.color = "black";
+                      }}
+                    >
                       Projects
                     </a>
                   </Text>
@@ -263,6 +304,12 @@ const Navbar = () => {
                       onClick={() => {
                         handleOpenModal();
                         handleCloseDrawer();
+                      }}
+                      onMouseEnter={(e) => {
+                        e.target.style.color = "red";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.target.style.color = "black";
                       }}
                     >
                       Contact
