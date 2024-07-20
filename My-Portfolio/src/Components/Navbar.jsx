@@ -76,7 +76,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className="flex justify-around w-auto h-14 bg-black text-white items-center fixed top-0 left-0 right-0">
+      <nav className="flex z-[1000] justify-around w-auto h-14 bg-black text-white items-center fixed top-0 left-0 right-0">
         <div>
           <h1 className="flex items-center gap-3 font-serif text-3xl text-center font-medium">
             <FcBusinessman className="text-[35px]" /> Jay M. Vekariya
@@ -111,91 +111,93 @@ const Navbar = () => {
               >
                 Contact
               </Button>
-              <Modal
-                initialFocusRef={initialRef}
-                finalFocusRef={finalRef}
-                isOpen={isModalOpen}
-                onClose={handleCloseModal}
-              >
-                <ModalOverlay />
-                <ModalContent>
-                  <ModalHeader>
-                    <Center>
-                      <Heading>Get In Touch</Heading>
-                    </Center>
-                  </ModalHeader>
-                  <ModalCloseButton />
-                  <ModalBody pb={6}>
-                    <form ref={form} onSubmit={sendEmail}>
-                      <FormControl>
-                        <FormLabel>Your Name</FormLabel>
-                        <Input
-                          // ref={initialRef}
-                          placeholder="Enter Your Name"
-                          name="from_name"
-                          required
-                        />
-                      </FormControl>
+              <li className="">
+                <Modal
+                  initialFocusRef={initialRef}
+                  finalFocusRef={finalRef}
+                  isOpen={isModalOpen}
+                  onClose={handleCloseModal}
+                >
+                  <ModalOverlay />
+                  <ModalContent margin={8}>
+                    <ModalHeader>
+                      <Center>
+                        <Heading>Get In Touch</Heading>
+                      </Center>
+                    </ModalHeader>
+                    <ModalCloseButton />
+                    <ModalBody pb={6}>
+                      <form ref={form} onSubmit={sendEmail}>
+                        <FormControl>
+                          <FormLabel>Your Name</FormLabel>
+                          <Input
+                            // ref={initialRef}
+                            placeholder="Enter Your Name"
+                            name="from_name"
+                            required
+                          />
+                        </FormControl>
 
-                      <FormControl mt={4}>
-                        <FormLabel>Your Email</FormLabel>
-                        <Input
-                          placeholder="Enter Your Email"
-                          name="from_email"
-                          required
-                        />
-                      </FormControl>
+                        <FormControl mt={4}>
+                          <FormLabel>Your Email</FormLabel>
+                          <Input
+                            placeholder="Enter Your Email"
+                            name="from_email"
+                            required
+                          />
+                        </FormControl>
 
-                      <FormControl mt={4}>
-                        <Textarea
-                          placeholder="Your Message"
-                          name="message"
-                          required
-                        />
-                      </FormControl>
-                      <ModalFooter placeContent="center">
-                        <Button
-                          type="submit"
-                          colorScheme="blue"
-                          mr={3}
-                          onClick={(e) => {
-                            const formData = new FormData(form.current);
-                            const isFormEmpty = Array.from(
-                              formData.values()
-                            ).every((value) => value === "");
+                        <FormControl mt={4}>
+                          <Textarea
+                            placeholder="Your Message"
+                            name="message"
+                            required
+                          />
+                        </FormControl>
+                        <ModalFooter placeContent="center">
+                          <Button
+                            type="submit"
+                            colorScheme="blue"
+                            mr={3}
+                            onClick={(e) => {
+                              const formData = new FormData(form.current);
+                              const isFormEmpty = Array.from(
+                                formData.values()
+                              ).every((value) => value === "");
 
-                            if (!isFormEmpty) {
-                              // Create an example promise that resolves in 2s
-                              const examplePromise = new Promise(
-                                (resolve, reject) => {
-                                  setTimeout(() => resolve(200), 2000);
-                                }
-                              );
+                              if (!isFormEmpty) {
+                                // Create an example promise that resolves in 2s
+                                const examplePromise = new Promise(
+                                  (resolve, reject) => {
+                                    setTimeout(() => resolve(200), 2000);
+                                  }
+                                );
 
-                              toast.promise(examplePromise, {
-                                success: {
-                                  title: "Email send successfully..!",
-                                  description: "Looks great",
-                                },
-                                error: {
-                                  title: "Promise rejected",
-                                  description: "Something wrong",
-                                },
-                                loading: {
-                                  title: "Data sending...",
-                                  description: "Please wait",
-                                },
-                              });
-                            }
-                          }}
-                        >
-                          Submit
-                        </Button>
-                      </ModalFooter>
-                    </form>
-                  </ModalBody>
-                </ModalContent>
-              </Modal>
+                                toast.promise(examplePromise, {
+                                  success: {
+                                    title: "Email send successfully..!",
+                                    description: "Looks great",
+                                  },
+                                  error: {
+                                    title: "Promise rejected",
+                                    description: "Something wrong",
+                                  },
+                                  loading: {
+                                    title: "Data sending...",
+                                    description: "Please wait",
+                                  },
+                                });
+                              }
+                            }}
+                          >
+                            Submit
+                          </Button>
+                        </ModalFooter>
+                      </form>
+                    </ModalBody>
+                  </ModalContent>
+                </Modal>
+              </li>
             </li>
           </li>
           <li className="list-none">

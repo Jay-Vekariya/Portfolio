@@ -9,7 +9,7 @@ import Technical_skills from "./Components/Technical_skills";
 
 const App = () => {
   return (
-    <div className="h-auto   bg-black text-white w-auto flex flex-col gap-10 pt-10">
+    <div className="h-auto select-none bg-black text-white w-auto flex flex-col gap-10 pt-10">
       <Navbar />
       <Homepage />
       <Academics />

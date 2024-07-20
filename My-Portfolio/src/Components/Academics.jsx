@@ -44,7 +44,7 @@ const Academics = () => {
               </Tab>
             </TabList>
           </Center>
-          <TabPanels textColor="black">
+          <TabPanels textColor="black" className="ease-in-out duration-300">
             <TabPanel>
               <CustomeCard>
                 <Flex>
