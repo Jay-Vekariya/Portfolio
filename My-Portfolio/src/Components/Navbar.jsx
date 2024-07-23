@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { IoHome } from "react-icons/io5";
 import { FcBusinessman } from "react-icons/fc";
+import { Link } from "react-scroll";
 import {
   Drawer,
   DrawerBody,
@@ -86,20 +87,60 @@ const Navbar = () => {
           <li className="md:hidden hidden sm:hidden lg:flex lg:flex-row gap-10 items-center pr-20">
             <li className="cursor-pointer flex items-center gap-1">
               <IoHome />
-              <a href="#Home">Home</a>
+              <Link
+                to="Home"
+                spy={true}
+                smooth={true}
+                offset={-200}
+                duration={500}
+              >
+                Home
+              </Link>
             </li>
             <li className="cursor-pointer">
-              <a href="#Academics">Academic Credentials</a>
+              <Link
+                to="Academics"
+                spy={true}
+                smooth={true}
+                offset={-200}
+                duration={500}
+              >
+                Academic Credentials
+              </Link>
             </li>
             <li className="cursor-pointer">
-              <a href="#Technical-Skills">Technical Skills</a>
+              <Link
+                to="Technical-Skills"
+                spy={true}
+                smooth={true}
+                offset={-300}
+                duration={500}
+              >
+                Technical Skills
+              </Link>
             </li>
             <li className="cursor-pointer">
               {" "}
-              <a href="#Experience">Experience</a>
+              <Link
+                to="Experience"
+                spy={true}
+                smooth={true}
+                offset={-200}
+                duration={500}
+              >
+                Experience
+              </Link>
             </li>
             <li className="cursor-pointer">
-              <a href="#projects">Projects</a>
+              <Link
+                to="Projects"
+                spy={true}
+                smooth={true}
+                offset={-90}
+                duration={500}
+              >
+                Projects
+              </Link>
             </li>
             <li className="cursor-pointer">
               <Button
@@ -111,93 +152,91 @@ const Navbar = () => {
               >
                 Contact
               </Button>
-              <li className="">
-                <Modal
-                  initialFocusRef={initialRef}
-                  finalFocusRef={finalRef}
-                  isOpen={isModalOpen}
-                  onClose={handleCloseModal}
-                >
-                  <ModalOverlay />
-                  <ModalContent margin={8}>
-                    <ModalHeader>
-                      <Center>
-                        <Heading>Get In Touch</Heading>
-                      </Center>
-                    </ModalHeader>
-                    <ModalCloseButton />
-                    <ModalBody pb={6}>
-                      <form ref={form} onSubmit={sendEmail}>
-                        <FormControl>
-                          <FormLabel>Your Name</FormLabel>
-                          <Input
-                            // ref={initialRef}
-                            placeholder="Enter Your Name"
-                            name="from_name"
-                            required
-                          />
-                        </FormControl>
+              <Modal
+                initialFocusRef={initialRef}
+                finalFocusRef={finalRef}
+                isOpen={isModalOpen}
+                onClose={handleCloseModal}
+              >
+                <ModalOverlay />
+                <ModalContent padding={2}>
+                  <ModalHeader>
+                    <Center>
+                      <Heading>Get In Touch</Heading>
+                    </Center>
+                  </ModalHeader>
+                  <ModalCloseButton />
+                  <ModalBody pb={6}>
+                    <form ref={form} onSubmit={sendEmail}>
+                      <FormControl>
+                        <FormLabel>Your Name</FormLabel>
+                        <Input
+                          // ref={initialRef}
+                          placeholder="Enter Your Name"
+                          name="from_name"
+                          required
+                        />
+                      </FormControl>
 
-                        <FormControl mt={4}>
-                          <FormLabel>Your Email</FormLabel>
-                          <Input
-                            placeholder="Enter Your Email"
-                            name="from_email"
-                            required
-                          />
-                        </FormControl>
+                      <FormControl mt={4}>
+                        <FormLabel>Your Email</FormLabel>
+                        <Input
+                          placeholder="Enter Your Email"
+                          name="from_email"
+                          required
+                        />
+                      </FormControl>
 
-                        <FormControl mt={4}>
-                          <Textarea
-                            placeholder="Your Message"
-                            name="message"
-                            required
-                          />
-                        </FormControl>
-                        <ModalFooter placeContent="center">
-                          <Button
-                            type="submit"
-                            colorScheme="blue"
-                            mr={3}
-                            onClick={(e) => {
-                              const formData = new FormData(form.current);
-                              const isFormEmpty = Array.from(
-                                formData.values()
-                              ).every((value) => value === "");
+                      <FormControl mt={4}>
+                        <Textarea
+                          placeholder="Your Message"
+                          name="message"
+                          required
+                        />
+                      </FormControl>
+                      <ModalFooter placeContent="center">
+                        <Button
+                          type="submit"
+                          colorScheme="blue"
+                          mr={3}
+                          onClick={(e) => {
+                            const formData = new FormData(form.current);
+                            const isFormEmpty = Array.from(
+                              formData.values()
+                            ).every((value) => value === "");
 
-                              if (!isFormEmpty) {
-                                // Create an example promise that resolves in 2s
-                                const examplePromise = new Promise(
-                                  (resolve, reject) => {
-                                    setTimeout(() => resolve(200), 2000);
-                                  }
-                                );
+                            if (!isFormEmpty) {
+                              // Create an example promise that resolves in 2s
+                              const examplePromise = new Promise(
+                                (resolve, reject) => {
+                                  setTimeout(() => resolve(200), 2000);
+                                }
+                              );
 
-                                toast.promise(examplePromise, {
-                                  success: {
-                                    title: "Email send successfully..!",
-                                    description: "Looks great",
-                                  },
-                                  error: {
-                                    title: "Promise rejected",
-                                    description: "Something wrong",
-                                  },
-                                  loading: {
-                                    title: "Data sending...",
-                                    description: "Please wait",
-                                  },
-                                });
-                              }
-                            }}
-                          >
-                            Submit
-                          </Button>
-                        </ModalFooter>
-                      </form>
-                    </ModalBody>
-                  </ModalContent>
-                </Modal>
-              </li>
+                              toast.promise(examplePromise, {
+                                success: {
+                                  title: "Email send successfully..!",
+                                  description: "Looks great",
+                                },
+                                error: {
+                                  title: "Promise rejected",
+                                  description: "Something wrong",
+                                },
+                                loading: {
+                                  title: "Data sending...",
+                                  description: "Please wait",
+                                },
+                              });
+                            }
+                          }}
+                        >
+                          Submit
+                        </Button>
+                      </ModalFooter>
+                    </form>
+                  </ModalBody>
+                </ModalContent>
+              </Modal>
             </li>
           </li>
           <li className="list-none">
@@ -230,10 +269,13 @@ const Navbar = () => {
               <Box mt="6" mx="3" textAlign="center">
                 <VStack fontWeight="600" fontSize="xl">
                   <Text>
-                    <a
-                      onClose={handleCloseDrawer}
-                      finalFocusRef={btnRef}
-                      href="#Home"
+                    <Link
+                      to="Home"
+                      spy={true}
+                      smooth={true}
+                      offset={-200}
+                      duration={500}
+                      onClick={handleCloseDrawer}
                       onMouseEnter={(e) => {
                         e.target.style.color = "red";
                       }}
@@ -242,11 +284,16 @@ const Navbar = () => {
                       }}
                     >
                       Home
-                    </a>
+                    </Link>
                   </Text>
                   <Text>
-                    <a
-                      href="#Academics"
+                    <Link
+                      to="Academics"
+                      spy={true}
+                      smooth={true}
+                      offset={-120}
+                      duration={500}
+                      // --------------
                       onClick={handleCloseDrawer}
                       onMouseEnter={(e) => {
                         e.target.style.color = "red";
@@ -256,11 +303,16 @@ const Navbar = () => {
                       }}
                     >
                       Academic Credentials
-                    </a>
+                    </Link>
                   </Text>
                   <Text>
-                    <a
-                      href="#Technical-Skills"
+                    <Link
+                      to="Technical-Skills"
+                      spy={true}
+                      smooth={true}
+                      offset={-100}
+                      duration={500}
+                      // --------------
                       onClick={handleCloseDrawer}
                       onMouseEnter={(e) => {
                         e.target.style.color = "red";
@@ -270,11 +322,16 @@ const Navbar = () => {
                       }}
                     >
                       Technical Skills
-                    </a>
+                    </Link>
                   </Text>
                   <Text>
-                    <a
-                      href="#Experience"
+                    <Link
+                      to="Experience"
+                      spy={true}
+                      smooth={true}
+                      offset={-100}
+                      duration={500}
+                      // --------------
                       onClick={handleCloseDrawer}
                       onMouseEnter={(e) => {
                         e.target.style.color = "red";
@@ -284,11 +341,16 @@ const Navbar = () => {
                       }}
                     >
                       Experience
-                    </a>
+                    </Link>
                   </Text>
                   <Text>
-                    <a
-                      href="#projects"
+                    <Link
+                      to="Projects"
+                      spy={true}
+                      smooth={true}
+                      offset={-70}
+                      duration={500}
+                      // --------------
                       onClick={handleCloseDrawer}
                       onMouseEnter={(e) => {
                         e.target.style.color = "red";
@@ -298,7 +360,7 @@ const Navbar = () => {
                       }}
                     >
                       Projects
-                    </a>
+                    </Link>
                   </Text>
                   <Text>
                     <a

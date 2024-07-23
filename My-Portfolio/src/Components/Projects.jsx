@@ -11,7 +11,7 @@ import React from "react";
 
 const Projects = () => {
   return (
-    <div className="p-4" id="projects">
+    <div className="p-4" id="Projects">
       <Center>
         <Heading>Projects</Heading>
       </Center>
