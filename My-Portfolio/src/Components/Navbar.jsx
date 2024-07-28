@@ -136,7 +136,7 @@ const Navbar = () => {
                 to="Projects"
                 spy={true}
                 smooth={true}
-                offset={-90}
+                offset={-0}
                 duration={500}
               >
                 Projects
