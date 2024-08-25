@@ -77,7 +77,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className="flex z-[1000] justify-around w-auto h-14  text-white items-center fixed top-0 left-0 right-0">
+      <nav className="flex z-[1000] justify-around w-auto h-14 bg-slate-800 text-white items-center fixed top-0 left-0 right-0">
         <div>
           <h1 className="flex items-center gap-3 font-serif text-3xl text-center font-medium">
             <FcBusinessman className="text-[35px]" /> Jay M. Vekariya
