@@ -256,18 +256,25 @@ const Navbar = () => {
         placement="left"
         onClose={handleCloseDrawer}
         finalFocusRef={btnRef}
+        className=" text-white"
       >
         <DrawerOverlay />
         <DrawerContent>
-          <DrawerCloseButton />
-          <Heading fontSize="20px" as="h1" textAlign="center" pt="3.5rem">
+          <DrawerCloseButton className=" text-white" />
+          <Heading
+            className=" bg-slate-900 text-white"
+            fontSize="25px"
+            as="h1"
+            textAlign="center"
+            pt="3.5rem"
+          >
             Jay M. Vekariya
           </Heading>
 
-          <DrawerBody>
+          <DrawerBody className=" bg-slate-900 text-white">
             <Stack textAlign="center">
               <Box mt="6" mx="3" textAlign="center">
-                <VStack fontWeight="600" fontSize="xl">
+                <VStack fontWeight="600" fontSize="2xl">
                   <Text>
                     <Link
                       to="Home"
