@@ -274,7 +274,7 @@ const Navbar = () => {
           <DrawerBody className=" bg-slate-900 text-white">
             <Stack textAlign="center">
               <Box mt="6" mx="3" textAlign="center">
-                <VStack fontWeight="600" fontSize="22px">
+                <VStack fontWeight="600" fontSize="22px" >
                   <Text>
                     <Link
                       to="Home"
