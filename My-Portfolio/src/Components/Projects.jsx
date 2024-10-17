@@ -57,7 +57,7 @@ const Projects = () => {
     {
       id: 7,
       Title: "Chess Board Game",
-      Image: "./Images/Chess_Board_Game",
+      Image: "./Images/Chess_Board_Game.jpg",
       Link: "https://chess-board-game-oay6.onrender.com/",
       Button: "Play it",
     },
