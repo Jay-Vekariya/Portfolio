@@ -5,6 +5,7 @@ import {
   Flex,
   Heading,
   Image,
+  Link,
 } from "@chakra-ui/react";
 import { Card, CardBody, CardFooter } from "@chakra-ui/react";
 import React from "react";
@@ -52,7 +53,14 @@ const Projects = () => {
       Image: "./Images/todo_List_app.jpg",
       Link: "https://todo-list-app-ta64.onrender.com/",
       Button: "View site",
-    }
+    },
+    {
+      id: 7,
+      Title: "Chess Board Game",
+      Image: "./Images/Chess_Board_Game",
+      Link: "https://chess-board-game-oay6.onrender.com/",
+      Button: "Play it",
+    },
   ];
 
   return (
