@@ -46,13 +46,14 @@ const Homepage = () => {
             About me
           </Button>
         </Center>
-        <h2 className="font-serif font-medium text-[15px] xl:text-[22px] lg:text-[18px] md:text-[18px] sm:text-[16px]">
-          I'm a MERN Stack Developer
+        <h2 className="font-sans uppercase font-medium text-[15px] xl:text-[22px] lg:text-[18px] md:text-[18px] sm:text-[16px]">
+          Developer with expertise in the MERN stack.
         </h2>
         <h3 className="text-wrap text-[15px] xl:text-[22px] lg:text-[18px] md:text-[16px] sm:text-[16px]">
-          I am currently pursuing B.Tech Computer Engineering. A full-stack
-          Developer with expertise in MERN stack and Tailwind CSS, seeking to
-          contribute to impactful software projects with top-notch solutions
+          Pursuing a B.Tech in Computer Engineering with strong skills in
+          full-stack development, focusing on the MERN stack and Tailwind CSS.
+          Committed to delivering effective solutions to meaningful software
+          projects.
         </h3>
       </div>
     </div>
