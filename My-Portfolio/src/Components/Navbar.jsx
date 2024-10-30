@@ -60,17 +60,38 @@ const Navbar = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
+    const toastId = toast({
+      title: "Data sending...",
+      description: "Please wait",
+      status: "loading",
+      duration: null,
+      isClosable: true,
+    });
+
     emailjs
       .sendForm("service_iv1scia", "template_lx6us2d", form.current, {
         publicKey: "8asV3e73wcQHYDorc",
       })
       .then(
         () => {
-          console.log("SUCCESS!");
+          toast.update(toastId, {
+            title: "Email sent successfully!",
+            description: "Looks great",
+            status: "success",
+            duration: 5000,
+            isClosable: true,
+          });
           handleCloseModal();
         },
         (error) => {
-          console.log("FAILED...", error.text);
+          toast.update(toastId, {
+            title:
+              "Failed to send email, Please check your internet connection & try again!!",
+            description: error.text,
+            status: "error",
+            duration: 5000,
+            isClosable: true,
+          });
         }
       );
   };
@@ -195,41 +216,7 @@ const Navbar = () => {
                         />
                       </FormControl>
                       <ModalFooter placeContent="center">
-                        <Button
-                          type="submit"
-                          colorScheme="blue"
-                          mr={3}
-                          onClick={(e) => {
-                            const formData = new FormData(form.current);
-                            const isFormEmpty = Array.from(
-                              formData.values()
-                            ).every((value) => value === "");
-
-                            if (!isFormEmpty) {
-                              // Create an example promise that resolves in 2s
-                              const examplePromise = new Promise(
-                                (resolve, reject) => {
-                                  setTimeout(() => resolve(200), 2000);
-                                }
-                              );
-
-                              toast.promise(examplePromise, {
-                                success: {
-                                  title: "Email send successfully..!",
-                                  description: "Looks great",
-                                },
-                                error: {
-                                  title: "Promise rejected",
-                                  description: "Something wrong",
-                                },
-                                loading: {
-                                  title: "Data sending...",
-                                  description: "Please wait",
-                                },
-                              });
-                            }
-                          }}
-                        >
+                        <Button type="submit" colorScheme="blue" mr={3}>
                           Submit
                         </Button>
                       </ModalFooter>
