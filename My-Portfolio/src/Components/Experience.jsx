@@ -38,7 +38,7 @@ const Experience = () => {
                 <Heading textColor="black" fontSize="22px">
                   <u>Bluesoft Infotech</u>
                 </Heading>
-                <Text fontSize={fontSize}>
+                <Text className="text-wrap text-[15px] xl:text-[22px] lg:text-[18px] md:text-[16px] sm:text-[16px]">
                   Worked as <strong>intern</strong> in Blue soft Infotech for{" "}
                   <strong>3 Months.</strong> That helped me gain experience in
                   commercial fields and helped me learn react.js with learning
@@ -63,7 +63,7 @@ const Experience = () => {
                 <Heading textColor="black" fontSize="22px">
                   <u> Codesoft </u>
                 </Heading>
-                <Text fontSize={fontSize}>
+                <Text className="text-wrap text-[15px] xl:text-[22px] lg:text-[18px] md:text-[16px] sm:text-[16px]">
                   Worked as <strong>intern</strong> in Codsoft as React.js
                   Developer for <strong>1 Month.</strong>
                   It's been a rewarding journey of self-discovery and
@@ -86,7 +86,7 @@ const Experience = () => {
                 <Heading textColor="black" fontSize="22px">
                   <u>Zeronesays LLP</u>
                 </Heading>
-                <Text fontSize={fontSize}>
+                <Text className="text-wrap text-[15px] xl:text-[22px] lg:text-[18px] md:text-[16px] sm:text-[16px]">
                   Starting an exciting new chapter as an{" "}
                   <strong>Software developer intern</strong> at{" "}
                   <strong>Zeronesays LLP</strong> in Surat, Gujarat. Looking
