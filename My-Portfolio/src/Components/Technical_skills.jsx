@@ -83,6 +83,13 @@ const Technical_skills = () => {
                     alt="Jay Vekariya"
                   />
                 </CustomeCard>
+                <CustomeCard bg="white">
+                  <img
+                    className="h-12 w-10"
+                    src="./Images/python.png"
+                    alt="Jay Vekariya"
+                  />
+                </CustomeCard>
               </Flex>
             </Box>
           </Center>

@@ -25,7 +25,7 @@ const Experience = () => {
           <Heading>Experience</Heading>
         </Center>
       </div>
-      <div className="xl:flex xl:flex-row xl:gap-10 xl:justify-around xl:pt-12 lg:flex lg:flex-row lg:gap-10 lg:justify-around lg:pt-12 md:flex md:flex-col md:pl-8 md:gap-10 md:justify-around md:pt-12 flex flex-col gap-8 pt-8">
+      <div className="flex-wrap xl:flex xl:flex-row xl:gap-10 xl:justify-around xl:pt-12 lg:flex lg:flex-row lg:gap-10 lg:justify-around lg:pt-12 md:flex md:flex-col md:pl-8 md:gap-10 md:justify-around md:pt-12 flex flex-col gap-8 pt-8">
         <CustomeCard
           bgColor="white"
           color="black"
@@ -35,8 +35,8 @@ const Experience = () => {
           <Flex>
             <Center gap="5">
               <Flex flexDirection="column">
-                <Heading textColor="black" fontSize="18px">
-                  Bluesoft Infotech
+                <Heading textColor="black" fontSize="22px">
+                  <u>Bluesoft Infotech</u>
                 </Heading>
                 <Text fontSize={fontSize}>
                   Worked as <strong>intern</strong> in Blue soft Infotech for{" "}
@@ -45,10 +45,10 @@ const Experience = () => {
                   and made projects on <strong>Ecommerce Website.</strong>
                 </Text>
               </Flex>
-              <Image
+              {/* <Image
                 src="./Images/Bluesoft.png"
                 className="h-[100px] bg-black"
-              />
+              /> */}
             </Center>
           </Flex>
         </CustomeCard>{" "}
@@ -60,8 +60,8 @@ const Experience = () => {
           <Flex>
             <Center gap="5">
               <Flex flexDirection="column">
-                <Heading textColor="black" fontSize="18px">
-                  Codesoft
+                <Heading textColor="black" fontSize="22px">
+                  <u> Codesoft </u>
                 </Heading>
                 <Text fontSize={fontSize}>
                   Worked as <strong>intern</strong> in Codsoft as React.js
@@ -70,7 +70,31 @@ const Experience = () => {
                   skill-building.
                 </Text>
               </Flex>
-              <Image src="./Images/codesoft.jpg" className="h-[100px] " />
+              {/* <Image src="./Images/codesoft.jpg" className="h-[100px] " /> */}
+            </Center>
+          </Flex>
+        </CustomeCard>
+        {/* 3rd card */}
+        <CustomeCard
+          bgColor="white"
+          color="black"
+          className=" xl:w-[700px] xl:min-h-[200px] lg:w-[600px] lg:min-h-[200px] lg:max-h-[200px] max-h-auto"
+        >
+          <Flex>
+            <Center gap="5">
+              <Flex flexDirection="column">
+                <Heading textColor="black" fontSize="22px">
+                  <u>Zeronesays LLP</u>
+                </Heading>
+                <Text fontSize={fontSize}>
+                  Starting an exciting new chapter as an{" "}
+                  <strong>Software developer intern</strong> at{" "}
+                  <strong>Zeronesays LLP</strong> in Surat, Gujarat. Looking
+                  forward to gaining hands-on experience, tackling new
+                  challenges, and expanding my knowledge in the software
+                  development field.
+                </Text>
+              </Flex>
             </Center>
           </Flex>
         </CustomeCard>
